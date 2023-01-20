@@ -107,8 +107,8 @@ function calculate(){
     }
 
     all.forEach((element)=>{
-        flag1=(element.grade==='-' || element.hours==="")? false : true
-        flag2=(element.hours<1)? false : true
+        if(element.grade==='-' || element.hours==="") flag1= false 
+        if(element.hours<1) flag2=false 
     })
 
     if(!flag1){
