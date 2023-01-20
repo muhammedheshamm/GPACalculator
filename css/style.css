@@ -112,6 +112,7 @@ select{
     padding: 10px;
     border: 1px solid #bbb;
     background-color: #EEE;
+    color:black;
 }
 
 hr{
@@ -134,6 +135,7 @@ hr{
     font-size: 16px;
     cursor: pointer;
     background-color: #eee;
+    color: black;
 }
 .msg{
     width: fit-content;
