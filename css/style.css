@@ -184,3 +184,8 @@ footer{
         font-size: 13px;
     }
 }
+@media(max-height:660px){
+    footer{
+        margin-top: 0;
+    }
+}
