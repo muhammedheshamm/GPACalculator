@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="js/index.js" defer></script>
+    <link rel="icon" href="/images/icon.webp">
+    <title>GPACalculator</title>
+</head>
+<body>
+    
+        <div class="container">
+            <h1>GERMAN GPA CALCULATOR</h1>
+            <hr>
+            <div class="subjects" id="subjects"> 
+                <div class="subject">
+                    <div class="s-cont">
+                        <div class="field">
+                            <label for="sname">Course name</label>
+                            <input type="text" id="sname" name="sname" placeholder="e.g CSEN 301">
+                        </div>
+                        <div class="field">
+                            <label class="req">Grade</label>
+                            <select class="sgrade">
+                                <option value="-">Select your grade</option>
+                                <option value="A+">A+</option>
+                                <option value="A">A</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B">B</option>
+                                <option value="B-">B-</option>
+                                <option value="C+">C+</option>
+                                <option value="C">C</option>
+                                <option value="C-">C-</option>
+                                <option value="D+">D+</option>
+                                <option value="D">D</option>
+                                <option value="F">F</option>
+                                <option value="FX">FX</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label class="req">Credit hours</label>
+                            <input type="number" class="shours" placeholder="course credits">
+                        </div>
+                        <i class="fa-solid fa-xmark close"></i>   
+                    </div>
+                </div>
+                <div class="subject">
+                    <div class="s-cont">
+                        <div class="field">
+                            <label for="sname">Course name</label>
+                            <input type="text" id="sname" name="sname" placeholder="e.g CSEN 301">
+                        </div>
+                        <div class="field">
+                            <label class="req">Grade</label>
+                            <select class="sgrade">
+                                <option value="-">Select your grade</option>
+                                <option value="A+">A+</option>
+                                <option value="A">A</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B">B</option>
+                                <option value="B-">B-</option>
+                                <option value="C+">C+</option>
+                                <option value="C">C</option>
+                                <option value="C-">C-</option>
+                                <option value="D+">D+</option>
+                                <option value="D">D</option>
+                                <option value="F">F</option>
+                                <option value="FX">FX</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label class="req">Credit hours</label>
+                            <input type="number"  class="shours" placeholder="course credits">
+                        </div>
+                        <i class="fa-solid fa-xmark close"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="btns">
+                <button class="btn" onclick="addCourse()">Add course</button>
+                <button class="btn" onclick="calculate()">Calculate</button>
+            </div>
+            <span class="msg" id="msg"></span>
+            <span class="gpa" id="gpa"></span>
+        </div>
+    <footer>Made With <i class="fa-solid fa-heart" style="color: red; margin: 0 5px;"></i> By Muhammed Hesham &#169; 2023</footer>
+</body>
+</html>
