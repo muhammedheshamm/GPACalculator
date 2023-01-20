@@ -1,5 +1,12 @@
 html{
-    scroll-behavior: smooth;
+    scroll-behavior: smooth;  
+    background-color: black !important;
+
+}
+
+body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
     background-color: black;
     background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/background.jpg);
     background-position: center;
@@ -7,12 +14,7 @@ html{
     background-size: cover;
     background-attachment: fixed;
     backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);    
-}
-
-body{
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
+    -webkit-backdrop-filter: blur(3px); 
 }
 
 *{
