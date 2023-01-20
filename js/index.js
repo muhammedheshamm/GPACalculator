@@ -31,7 +31,7 @@ function addCourse (){
         </div>
         <div class="field">
             <label class="req">Credit hours</label>
-            <input type="number" class="shours" placeholder="course credits">
+            <input type="tel" inputmode="numeric" class="shours" placeholder="course credits">
         </div>
         <i class="fa-solid fa-xmark close"></i>
     </div>`
@@ -108,7 +108,7 @@ function calculate(){
 
     all.forEach((element)=>{
         if(element.grade==='-' || element.hours==="") flag1= false 
-        if(element.hours<1) flag2=false 
+        if(element.hours<1 || isNaN(element.hours)) flag2=false 
     })
 
     if(!flag1){
