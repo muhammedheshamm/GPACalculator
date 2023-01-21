@@ -1,6 +1,10 @@
 let subjects = document.getElementById('subjects')
 let msg = document.getElementById('msg')
 let gpa = document.getElementById('gpa')
+let german = document.getElementById('german')
+let american = document.getElementById('american')
+let currState = 'german'
+
 function addCourse (){
     let course = document.createElement('div');
     course.className="subject"
@@ -26,7 +30,6 @@ function addCourse (){
                 <option value="D+">D+</option>
                 <option value="D">D</option>
                 <option value="F">F</option>
-                <option value="FX">FX</option>
             </select>
         </div>
         <div class="field">
@@ -65,7 +68,7 @@ document.querySelectorAll('.close').forEach((e)=>{
 })
 
 
-function colorChooser(gpa){
+function GcolorChooser(gpa){
     if(gpa <2)
         return 'rgba(0, 128, 0, 0.8)'
     if(gpa >= 2 && gpa < 3)
@@ -75,7 +78,18 @@ function colorChooser(gpa){
 
 }
 
-function gradeToNumeric(grade){
+function AcolorChooser(gpa){
+    if(gpa >= 3)
+        return 'rgba(0, 128, 0, 0.8)'
+    if(gpa >= 2 && gpa < 3)
+        return 'rgba(255, 166, 0, 0.8)'
+    if(gpa < 2) 
+        return 'rgba(255, 0, 0, 0.8)'
+
+}
+
+
+function GgradeToNumeric(grade){
     switch (grade){
         case "A+" : return 0.7  
         case "A" : return 1  
@@ -88,8 +102,24 @@ function gradeToNumeric(grade){
         case "C-" : return 3.3  
         case "D+" : return 3.7  
         case "D" : return 4  
-        case "F" : return 5  
-        case "FX" : return 0  
+        case "F" : return 5
+    }
+}
+
+function AgradeToNumeric(grade){
+    switch (grade){
+        case "A+" : return 4  
+        case "A" : return 4  
+        case "A-" : return 3.7  
+        case "B+" : return 3.3 
+        case "B" : return 3
+        case "B-" : return 2.7  
+        case "C+" : return 2.3 
+        case "C" : return 3  
+        case "C-" : return 1.7  
+        case "D+" : return 1.3  
+        case "D" : return 1  
+        case "F" : return 0   
     }
 }
 
@@ -122,17 +152,39 @@ function calculate(){
         }
         else{
             all.forEach((element)=>{
-                points+= gradeToNumeric(element.grade) * element.hours
+                points+= currState === 'german'? GgradeToNumeric(element.grade) * element.hours : AgradeToNumeric(element.grade) * element.hours
                 sumHours+= parseInt(element.hours)
             })
             let myGPA = (points/sumHours).toFixed(2)
             msg.innerText=''
             gpa.innerHTML=`Your GPA is
                             <span style="font-size:35px; font-weight:bold; display:block;">${myGPA}</span>`
-            gpa.style.backgroundColor=colorChooser(myGPA)
+            gpa.style.backgroundColor= currState === 'german'? GcolorChooser(myGPA) : AcolorChooser(myGPA)
             gpa.style.display='flex'
 
 
         }
-
 }
+
+
+
+german.addEventListener('click' , (e)=>{
+    if (german.classList.contains('active')){
+        german.classList.remove('active')
+    }
+    if (american.classList.contains('active')){
+        american.classList.remove('active')
+    }
+    e.target.classList.add('active')
+    currState='german'
+})
+american.addEventListener('click' ,(e)=>{
+    if (german.classList.contains('active')){
+        german.classList.remove('active')
+    }
+    if (american.classList.contains('active')){
+        american.classList.remove('active')
+    }
+    e.target.classList.add('active')
+    currState='american'
+})
