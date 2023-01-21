@@ -1,5 +1,5 @@
 html{
-    scroll-behavior: smooth;  
+    scroll-behavior: smooth;
     background-color: black !important;
 
 }
@@ -7,16 +7,14 @@ html{
 body{
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    background-color: black;
     background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/background.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px); 
+    -webkit-backdrop-filter: blur(3px);    
 }
-
 *{
     box-sizing: border-box;
 }
@@ -28,7 +26,7 @@ body{
     padding: 25px;
     color: white;
     transition: .3s;
-    min-height: 600px;
+    min-height: 610px;
 }
 
 h1{
@@ -116,7 +114,6 @@ select{
     padding: 10px;
     border: 1px solid #bbb;
     background-color: #EEE;
-    color:black;
 }
 
 hr{
@@ -139,7 +136,6 @@ hr{
     font-size: 16px;
     cursor: pointer;
     background-color: #eee;
-    color: black;
 }
 .msg{
     width: fit-content;
@@ -175,9 +171,9 @@ footer{
     background-color: rgba(0, 0, 0, 0.9);
     width: 100%;
     bottom: 0;
-    margin-top: calc(100vh - 600px - 60px);
+    margin-top: calc(100vh - 610px - 60px);
     color: white;
-    height: 59px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -191,4 +187,41 @@ footer{
     footer{
         margin-top: 0;
     }
+}
+
+.mode{
+    width: 100%;
+    max-width: 240px;
+    margin: 0 auto 20px;
+    height: 30px;
+    display: flex;
+    }
+.mode span{
+    color: black;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.mode span:hover{
+    background-color: rgba(0, 113, 113, 0.8);
+    color: white;
+}
+
+.mode span:first-child{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.mode span:last-child{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.active{
+    background-color: rgba(0, 113, 113, 0.8) !important;
+    color: white !important;
 }
