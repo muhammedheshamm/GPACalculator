@@ -22,7 +22,7 @@ body{
 .container{
     margin: auto;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1000px;
     padding: 25px;
     color: white;
     transition: .3s;
@@ -67,9 +67,10 @@ h1{
     flex-wrap: wrap;
     width: 100%;
     margin: auto;
-    gap: 20px;
+    row-gap: 10px;
+    column-gap: 20px;
     position: relative;
-    padding: 25px;
+    padding: 20px;
 }
 .close{
     position: absolute;
