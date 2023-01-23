@@ -26,16 +26,17 @@ body{
     padding: 25px;
     color: white;
     transition: .3s;
-    min-height: 610px;
+    min-height: 630px;
 }
 
 h1{
     text-align: center;
     margin: 0 0 10px;
+    font-size: 35px;
 }
-@media(max-width:405px){
+@media(max-width:450px){
     h1{
-        font-size: 25px;
+        font-size: 30px;
     }
 }
 .subjects{
@@ -122,7 +123,7 @@ hr{
 }
 
 .btns{
-    margin: 20px auto 20px;
+    margin: 20px auto 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -143,7 +144,7 @@ hr{
     width: fit-content;
     max-width: 100%;
     text-align: center;
-    margin: 0 auto;
+    margin: 20px auto;
     display:block;
     color: red;
     font-size: 14px;
@@ -170,10 +171,10 @@ input:focus{
 
 footer{
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(20, 20, 20, 0.9);
     width: 100%;
     bottom: 0;
-    margin-top: calc(100vh - 610px - 60px);
+    margin-top: calc(100vh - 630px - 63px);
     color: white;
     height: 60px;
     display: flex;
@@ -185,7 +186,7 @@ footer{
         font-size: 13px;
     }
 }
-@media(max-height:660px){
+@media(max-height:690px){
     footer{
         margin-top: 0;
     }
@@ -193,11 +194,18 @@ footer{
 
 .mode{
     width: 100%;
-    max-width: 240px;
+    max-width: 250px;
     margin: 0 auto 20px;
-    height: 30px;
+    height: 35px;
     display: flex;
+}
+
+@media(max-width:400px){
+    .mode{
+        max-width: 100%;
     }
+}
+
 .mode span{
     color: black;
     width: 50%;
@@ -210,7 +218,7 @@ footer{
 }
 
 .mode span:hover{
-    background-color: rgba(0, 113, 113, 0.8);
+    background-color: rgba(0, 80, 80, 0.8);
     color: white;
 }
 
@@ -224,6 +232,6 @@ footer{
 }
 
 .active{
-    background-color: rgba(0, 113, 113, 0.8) !important;
+    background-color: rgba(0, 80, 80, 0.8) !important;
     color: white !important;
 }
