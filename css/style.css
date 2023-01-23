@@ -26,7 +26,7 @@ body{
     padding: 25px;
     color: white;
     transition: .3s;
-    min-height: 630px;
+    min-height: 633px;
 }
 
 h1{
@@ -171,7 +171,7 @@ input:focus{
 
 footer{
     text-align: center;
-    background-color: rgba(20, 20, 20, 0.9);
+    background-color: rgba(10, 10, 10, 0.9);
     width: 100%;
     bottom: 0;
     margin-top: calc(100vh - 630px - 63px);
