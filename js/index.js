@@ -3,6 +3,7 @@ let msg = document.getElementById('msg')
 let gpa = document.getElementById('gpa')
 let german = document.getElementById('german')
 let american = document.getElementById('american')
+let inputs = document.querySelectorAll('.shours')
 let currState = 'german'
 
 function addCourse (){
@@ -17,7 +18,7 @@ function addCourse (){
         <div class="field">
             <label class="req">Grade</label>
             <select class="sgrade">
-                <option value="-">Select your grade</option>
+                <option value="-" class="title">Select your grade</option>
                 <option value="A+">A+</option>
                 <option value="A">A</option>
                 <option value="A-">A-</option>
@@ -51,8 +52,8 @@ function addCourse (){
             }
         })
     })
-    msg.innerText=''
-    gpa.style.display='none'
+    markError()
+    disableOption()
 }
 
 document.querySelectorAll('.close').forEach((e)=>{
@@ -66,6 +67,62 @@ document.querySelectorAll('.close').forEach((e)=>{
         }
     })
 })
+
+function markEmpty(){
+    document.querySelectorAll('.shours').forEach((input)=>{
+        if(input.value==='')
+            input.style.border='1px solid red'
+        else
+            input.style.border='1px solid #ccc'
+    })
+    document.querySelectorAll('.sgrade').forEach((input)=>{
+        if(input.value==='-')
+            input.style.border='1px solid red'
+        else
+            input.style.border='1px solid #ccc'
+    })
+}
+
+function markLessthanOne(){
+    document.querySelectorAll('.shours').forEach((input)=>{
+        if(input.value<1)
+            input.style.border='1px solid red'
+        else
+            input.style.border='1px solid #ccc'
+    })
+}
+
+function markError(){
+    document.querySelectorAll('.shours').forEach((input)=>{
+        input.addEventListener('focusout' , (e)=>{
+            if(input.value<1)
+                e.target.style.border='1px solid red'
+            else
+                e.target.style.border='1px solid #ccc'
+        })
+    })
+    document.querySelectorAll('.sgrade').forEach((input)=>{
+        input.addEventListener('focusout' , (e)=>{
+            if(input.value==='-')
+                e.target.style.border='1px solid red'
+            else
+                e.target.style.border='1px solid #ccc'
+        })
+    })
+}
+markError()
+
+
+function disableOption(){
+    let options = document.querySelectorAll('.sgrade')
+    options.forEach((option)=>{
+        option.addEventListener('focusin' , (e)=>{
+            e.target.querySelectorAll('.title')[0].disabled=true
+        })
+    })
+}
+disableOption()
+
 
 
 function GcolorChooser(gpa){
@@ -144,11 +201,13 @@ function calculate(){
     if(!flag1){
         gpa.style.display='none'
         msg.innerText='please fill out all fields or remove unwanted courses'
+        markEmpty()
     }
     else 
         if(!flag2) {
             gpa.style.display='none'
             msg.innerText='please enter valid credit hours'
+            markLessthanOne()
         }
         else{
             all.forEach((element)=>{
