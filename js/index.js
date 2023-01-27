@@ -102,7 +102,7 @@ function markError(){
         })
     })
     document.querySelectorAll('.sgrade').forEach((input)=>{
-        input.addEventListener('focusout' , (e)=>{
+        input.addEventListener('focusin' , (e)=>{
             if(input.value==='-')
                 e.target.style.border='1px solid red'
             else
