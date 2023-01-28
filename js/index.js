@@ -85,7 +85,7 @@ function markEmpty(){
 
 function markLessthanOne(){
     document.querySelectorAll('.shours').forEach((input)=>{
-        if(input.value<1)
+        if(input.value<1 || isNaN(input.value))
             input.style.border='1px solid red'
         else
             input.style.border='1px solid #ccc'
@@ -95,14 +95,14 @@ function markLessthanOne(){
 function markError(){
     document.querySelectorAll('.shours').forEach((input)=>{
         input.addEventListener('focusout' , (e)=>{
-            if(input.value<1)
+            if(input.value<1 || isNaN(input.value))
                 e.target.style.border='1px solid red'
             else
                 e.target.style.border='1px solid #ccc'
         })
     })
     document.querySelectorAll('.sgrade').forEach((input)=>{
-        input.addEventListener('focusin' , (e)=>{
+        input.addEventListener('focusout' , (e)=>{
             if(input.value==='-')
                 e.target.style.border='1px solid red'
             else
