@@ -116,7 +116,7 @@ markError()
 function disableOption(){
     let options = document.querySelectorAll('.sgrade')
     options.forEach((option)=>{
-        option.addEventListener('focusin' , (e)=>{
+        option.addEventListener('focus' , (e)=>{
             e.target.querySelectorAll('.title')[0].disabled=true
         })
     })
@@ -200,7 +200,7 @@ function calculate(){
 
     if(!flag1){
         gpa.style.display='none'
-        msg.innerText='please fill out all fields or remove unwanted courses'
+        msg.innerText='please fill out all required fields or remove unwanted courses'
         markEmpty()
     }
     else 
