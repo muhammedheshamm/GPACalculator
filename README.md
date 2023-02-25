@@ -1,4 +1,4 @@
-# Project Title
+# GPACalculator
 
 A simple gpa calculator. Created using html, css and vanilla javaScript
 
